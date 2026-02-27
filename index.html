@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control de Citas Medicas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Aplicacion: Gestion basica de citas medicas</h1>
+
+    <section class="problem">
+      <strong>Situacion problematica:</strong>
+      En muchos centros de salud pequenos, las citas se anotan en papel o por mensajes dispersos,
+      lo que genera perdidas de turnos, errores de horario y doble asignacion de medicos.
+      Esta aplicacion web permite registrar citas de forma rapida y ver los resultados en pantalla
+      sin recargar la pagina.
+      <br /><br />
+      <strong>Sectores enfocados:</strong> salud (clinicas, consultorios, centros medicos),
+      administracion y atencion al cliente.
+    </section>
+
+    <form id="appointmentForm" novalidate>
+      <div class="field">
+        <label for="patientName">Nombre del paciente *</label>
+        <input id="patientName" name="patientName" type="text" placeholder="Ej: Ana Lopez" required />
+      </div>
+
+      <div class="field">
+        <label for="doctor">Especialidad medica *</label>
+        <select id="doctor" name="doctor" required>
+          <option value="">Seleccione una opcion</option>
+          <option value="Medicina general">Medicina general</option>
+          <option value="Pediatria">Pediatria</option>
+          <option value="Dermatologia">Dermatologia</option>
+          <option value="Cardiologia">Cardiologia</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="date">Fecha de la cita *</label>
+        <input id="date" name="date" type="date" required />
+      </div>
+
+      <button type="submit">Registrar cita</button>
+      <p id="message" class="message" aria-live="polite"></p>
+    </form>
+
+    <appointment-list></appointment-list>
+
+    <footer>
+      Los datos se procesan con JavaScript usando eventos y Web Components, sin recargar la pagina.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
